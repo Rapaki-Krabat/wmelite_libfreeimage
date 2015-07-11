@@ -3,8 +3,11 @@
 
 include Makefile.srcs
 
-CFLAGS =  -g -O2 -Wall -Wmissing-prototypes -std=c99 -ffast-math -fno-strict-aliasing
-CXXFLAGS =  -g -O2 -Wall -fno-strict-aliasing
+# ./configure --without-zlib --without-png --without-bzip2 '--prefix=/usr/local/iPhone' '--host=arm-apple-darwin' '--enable-static=yes' '--enable-shared=no' 'CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang' 'CFLAGS=-arch x86_64 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks -mios-simulator-version-min=8.4 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/libxml2/ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk' 'AR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/ar' 'LDFLAGS=-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/ -mios-simulator-version-min=8.4'
+
+
+CFLAGS =  -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks 
+CXXFLAGS =  -pipe -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks -stdlib=libc++
 
 IPHONEOS_DEPLOYMENT_TARGET = 8.4
 IPHONESIM_DEPLOYMENT_TARGET = 8.4
@@ -24,14 +27,12 @@ PLATFORM_PHONE_DEVELOPER_BIN_DIR = /Applications/Xcode.app/Contents/Developer/Pl
 SDKROOT_SIM = /Applications/Xcode.app/Contents/Developer/Platforms/$(PLATFORM_SIM).platform/Developer/SDKs/$(PLATFORM_SIM).sdk/
 SDKROOT_PHONE = /Applications/Xcode.app/Contents/Developer/Platforms/$(PLATFORM_PHONE).platform/Developer/SDKs/$(PLATFORM_PHONE).sdk/
 
-EXTRA_CFLAGS_SIM += -pipe -mdynamic-no-pic -fvisibility=hidden $(INCLUDE) -isysroot $(SDKROOT_SIM)
+EXTRA_CFLAGS_SIM += -isysroot $(SDKROOT_SIM) $(INCLUDE)
 EXTRA_LDFLAGS_SIM += -isysroot $(SDKROOT_SIM) -Wl,-dead_strip
 EXTRA_CFLAGS_SIM += -mios-simulator-version-min=$(IPHONESIM_DEPLOYMENT_TARGET)
 EXTRA_LDFLAGS_SIM += -mios-simulator-version-min=$(IPHONESIM_DEPLOYMENT_TARGET)
 
-# Xcode complains about the -mdynamic-no-pic with an Apple Mach-O Linker Warning, so removed
-#EXTRA_CFLAGS_PHONE += -arch $(ARCH_PHONE) -pipe -mdynamic-no-pic -fvisibility=hidden $(INCLUDE) -isysroot $(SDKROOT_PHONE)
-EXTRA_CFLAGS_PHONE += -pipe -fvisibility=hidden $(INCLUDE) -isysroot $(SDKROOT_PHONE)
+EXTRA_CFLAGS_PHONE += -isysroot $(SDKROOT_PHONE) $(INCLUDE)
 EXTRA_LDFLAGS_PHONE += -isysroot $(SDKROOT_PHONE) -Wl,-dead_strip
 EXTRA_CFLAGS_PHONE += -miphoneos-version-min=$(IPHONEOS_DEPLOYMENT_TARGET)
 EXTRA_LDFLAGS_PHONE += -miphoneos-version-min=$(IPHONEOS_DEPLOYMENT_TARGET)
@@ -45,13 +46,13 @@ CC_PHONE = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xc
 CFLAGS_SIM = $(CFLAGS) $(EXTRA_CFLAGS_SIM)
 LDFLAGS_SIM = $(EXTRA_LDFLAGS_SIM)
 CXX_SIM = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
-CXXFLAGS_SIM += $(EXTRA_CFLAGS_SIM) -fvisibility-inlines-hidden
+CXXFLAGS_SIM += $(CXXFLAGS) $(EXTRA_CFLAGS_SIM) -fvisibility-inlines-hidden
 LIBTOOL_SIM = /Applications/Xcode.app/Contents/Developer/Platforms/$(PLATFORM_PHONE).platform/Developer/usr/bin/libtool
 
 CFLAGS_PHONE = $(CFLAGS) $(EXTRA_CFLAGS_PHONE)
 LDFLAGS_PHONE += $(EXTRA_LDFLAGS_PHONE)
 CXX_PHONE = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
-CXXFLAGS_PHONE += $(EXTRA_CFLAGS_PHONE) -fvisibility-inlines-hidden
+CXXFLAGS_PHONE += $(CXXFLAGS) $(EXTRA_CFLAGS_PHONE) -fvisibility-inlines-hidden
 LIBTOOL_PHONE = /Applications/Xcode.app/Contents/Developer/Platforms/$(PLATFORM_PHONE).platform/Developer/usr/bin/libtool
 
 LIPO = lipo
