@@ -9,8 +9,8 @@ include Makefile.srcs
 CFLAGS =  -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks 
 CXXFLAGS =  -pipe -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks -stdlib=libc++
 
-IPHONEOS_DEPLOYMENT_TARGET = 8.4
-IPHONESIM_DEPLOYMENT_TARGET = 8.4
+IPHONEOS_DEPLOYMENT_TARGET = 5.1.1
+IPHONESIM_DEPLOYMENT_TARGET = 5.1.1
 
 PLATFORM_SIM = iPhoneSimulator
 PLATFORM_PHONE = iPhoneOS
