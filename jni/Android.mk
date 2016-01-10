@@ -315,9 +315,9 @@ Source/LibRawLite/./src/libraw_datastream.cpp   \
 
 
 #
-LOCAL_CFLAGS            += -O2
+LOCAL_CFLAGS            += -O2 -Wcast-align
 
-LOCAL_CPPFLAGS            += -O2
+LOCAL_CPPFLAGS            += -O2 -Wcast-align
 #
 LOCAL_MODULE            := freeimage
 
