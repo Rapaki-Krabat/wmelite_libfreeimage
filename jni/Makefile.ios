@@ -8,8 +8,8 @@ FREEIMAGE_LITE_BUILD = true
 CFLAGS =  -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks 
 CXXFLAGS =  -pipe -Wno-trigraphs -fpascal-strings -O2 -Wreturn-type -Wunused-variable -fmessage-length=0 -fvisibility=hidden -fexceptions -fasm-blocks -stdlib=libc++
 
-IPHONEOS_DEPLOYMENT_TARGET = 5.1.1
-IPHONESIM_DEPLOYMENT_TARGET = 5.1.1
+IPHONEOS_DEPLOYMENT_TARGET = 6.0
+IPHONESIM_DEPLOYMENT_TARGET = 6.0
 
 PLATFORM_SIM = iPhoneSimulator
 PLATFORM_PHONE = iPhoneOS
