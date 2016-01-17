@@ -3,9 +3,23 @@ LOCAL_PATH              :=  $(call my-dir)
 #
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS        +=  -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG -ISource/LibTIFF4 -ISource/ZLib -ISource/LibOpenJPEG -ISource/OpenEXR -ISource/OpenEXR/Half -ISource/OpenEXR/Iex -ISource/OpenEXR/IlmImf -ISource/OpenEXR/IlmThread -ISource/OpenEXR/Imath -ISource/LibRawLite -ISource/LibRawLite/dcraw -ISource/LibRawLite/internal -ISource/LibRawLite/libraw -ISource/LibRawLite/src
+LOCAL_CFLAGS        +=  -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG
 
-LOCAL_CPPFLAGS        += -fexceptions -frtti -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG -ISource/LibTIFF4 -ISource/ZLib -ISource/LibOpenJPEG -ISource/OpenEXR -ISource/OpenEXR/Half -ISource/OpenEXR/Iex -ISource/OpenEXR/IlmImf -ISource/OpenEXR/IlmThread -ISource/OpenEXR/Imath -ISource/LibRawLite -ISource/LibRawLite/dcraw -ISource/LibRawLite/internal -ISource/LibRawLite/libraw -ISource/LibRawLite/src
+LOCAL_CPPFLAGS      += -fexceptions -frtti -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG
+
+ifneq ($(FREEIMAGE_LITE_BUILD),true)
+
+LOCAL_CFLAGS        += -ISource/LibTIFF4 -ISource/ZLib -ISource/LibOpenJPEG -ISource/OpenEXR -ISource/OpenEXR/Half -ISource/OpenEXR/Iex -ISource/OpenEXR/IlmImf -ISource/OpenEXR/IlmThread -ISource/OpenEXR/Imath -ISource/LibRawLite -ISource/LibRawLite/dcraw -ISource/LibRawLite/internal -ISource/LibRawLite/libraw -ISource/LibRawLite/src
+
+LOCAL_CPPFLAGS      += -ISource/LibTIFF4 -ISource/ZLib -ISource/LibOpenJPEG -ISource/OpenEXR -ISource/OpenEXR/Half -ISource/OpenEXR/Iex -ISource/OpenEXR/IlmImf -ISource/OpenEXR/IlmThread -ISource/OpenEXR/Imath -ISource/LibRawLite -ISource/LibRawLite/dcraw -ISource/LibRawLite/internal -ISource/LibRawLite/libraw -ISource/LibRawLite/src
+
+else
+
+LOCAL_CFLAGS        += -DFREEIMAGE_LITE_BUILD -DAVOID_UNALIGNED_ACCESS
+
+LOCAL_CPPFLAGS      += -DFREEIMAGE_LITE_BUILD -DAVOID_UNALIGNED_ACCESS
+
+endif
 
 # LOCAL_ARM_MODE := arm
 
@@ -18,41 +32,11 @@ LOCAL_SRC_FILES         :=  \
 ./Source/FreeImage/GetType.cpp   \
 ./Source/FreeImage/MemoryIO.cpp   \
 ./Source/FreeImage/PixelAccess.cpp   \
-./Source/FreeImage/J2KHelper.cpp   \
-././Source/FreeImage/MNGHelper.cpp   \
 ./Source/FreeImage/Plugin.cpp   \
 ./Source/FreeImage/PluginBMP.cpp   \
-./Source/FreeImage/PluginCUT.cpp   \
-./Source/FreeImage/PluginDDS.cpp   \
-./Source/FreeImage/PluginEXR.cpp   \
-./Source/FreeImage/PluginG3.cpp   \
 ./Source/FreeImage/PluginGIF.cpp   \
-./Source/FreeImage/PluginHDR.cpp   \
-./Source/FreeImage/PluginICO.cpp   \
-./Source/FreeImage/PluginIFF.cpp   \
-./Source/FreeImage/PluginJ2K.cpp   \
-././Source/FreeImage/PluginJNG.cpp   \
-./Source/FreeImage/PluginJP2.cpp   \
 ./Source/FreeImage/PluginJPEG.cpp   \
-./Source/FreeImage/PluginKOALA.cpp   \
-./Source/FreeImage/PluginMNG.cpp   \
-./Source/FreeImage/PluginPCD.cpp   \
-./Source/FreeImage/PluginPCX.cpp   \
-./Source/FreeImage/PluginPFM.cpp   \
-./Source/FreeImage/PluginPICT.cpp   \
 ./Source/FreeImage/PluginPNG.cpp   \
-./Source/FreeImage/PluginPNM.cpp   \
-./Source/FreeImage/PluginPSD.cpp   \
-./Source/FreeImage/PluginRAS.cpp   \
-./Source/FreeImage/PluginRAW.cpp   \
-./Source/FreeImage/PluginSGI.cpp   \
-./Source/FreeImage/PluginTARGA.cpp   \
-./Source/FreeImage/PluginTIFF.cpp   \
-./Source/FreeImage/PluginWBMP.cpp   \
-./Source/FreeImage/PluginXBM.cpp   \
-./Source/FreeImage/PluginXPM.cpp   \
-./Source/FreeImage/PSDParser.cpp   \
-./Source/FreeImage/TIFFLogLuv.cpp   \
 ./Source/FreeImage/Conversion.cpp   \
 ./Source/FreeImage/Conversion16_555.cpp   \
 ./Source/FreeImage/Conversion16_565.cpp   \
@@ -84,7 +68,6 @@ LOCAL_SRC_FILES         :=  \
 ./Source/Metadata/IPTC.cpp   \
 ./Source/Metadata/TagConversion.cpp   \
 ./Source/Metadata/TagLib.cpp   \
-./Source/Metadata/XTIFF.cpp   \
 ./Source/FreeImageToolkit/Background.cpp   \
 ./Source/FreeImageToolkit/BSplineRotate.cpp   \
 ./Source/FreeImageToolkit/Channels.cpp   \
@@ -97,10 +80,10 @@ LOCAL_SRC_FILES         :=  \
 ./Source/FreeImageToolkit/MultigridPoissonSolver.cpp   \
 ./Source/FreeImageToolkit/Rescale.cpp   \
 ./Source/FreeImageToolkit/Resize.cpp   \
-Source/LibJPEG/./jaricom.c   \
+Source/LibJPEG/jaricom.c   \
 Source/LibJPEG/jcapimin.c   \
 Source/LibJPEG/jcapistd.c   \
-Source/LibJPEG/./jcarith.c   \
+Source/LibJPEG/jcarith.c   \
 Source/LibJPEG/jccoefct.c   \
 Source/LibJPEG/jccolor.c   \
 Source/LibJPEG/jcdctmgr.c   \
@@ -116,7 +99,7 @@ Source/LibJPEG/jcsample.c   \
 Source/LibJPEG/jctrans.c   \
 Source/LibJPEG/jdapimin.c   \
 Source/LibJPEG/jdapistd.c   \
-Source/LibJPEG/./jdarith.c   \
+Source/LibJPEG/jdarith.c   \
 Source/LibJPEG/jdatadst.c   \
 Source/LibJPEG/jdatasrc.c   \
 Source/LibJPEG/jdcoefct.c   \
@@ -144,21 +127,55 @@ Source/LibJPEG/jquant1.c   \
 Source/LibJPEG/jquant2.c   \
 Source/LibJPEG/jutils.c   \
 Source/LibJPEG/transupp.c   \
-Source/LibPNG/./png.c   \
-Source/LibPNG/./pngerror.c   \
-Source/LibPNG/./pngget.c   \
-Source/LibPNG/./pngmem.c   \
-Source/LibPNG/./pngpread.c   \
-Source/LibPNG/./pngread.c   \
-Source/LibPNG/./pngrio.c   \
-Source/LibPNG/./pngrtran.c   \
-Source/LibPNG/./pngrutil.c   \
-Source/LibPNG/./pngset.c   \
-Source/LibPNG/./pngtrans.c   \
-Source/LibPNG/./pngwio.c   \
-Source/LibPNG/./pngwrite.c   \
-Source/LibPNG/./pngwtran.c   \
-Source/LibPNG/./pngwutil.c   \
+Source/LibPNG/png.c   \
+Source/LibPNG/pngerror.c   \
+Source/LibPNG/pngget.c   \
+Source/LibPNG/pngmem.c   \
+Source/LibPNG/pngpread.c   \
+Source/LibPNG/pngread.c   \
+Source/LibPNG/pngrio.c   \
+Source/LibPNG/pngrtran.c   \
+Source/LibPNG/pngrutil.c   \
+Source/LibPNG/pngset.c   \
+Source/LibPNG/pngtrans.c   \
+Source/LibPNG/pngwio.c   \
+Source/LibPNG/pngwrite.c   \
+Source/LibPNG/pngwtran.c   \
+Source/LibPNG/pngwutil.c
+
+ifneq ($(FREEIMAGE_LITE_BUILD),true)
+LOCAL_SRC_FILES +=  \
+./Source/FreeImage/PSDParser.cpp   \
+./Source/FreeImage/TIFFLogLuv.cpp   \
+./Source/FreeImage/J2KHelper.cpp   \
+./Source/FreeImage/MNGHelper.cpp   \
+./Source/Metadata/XTIFF.cpp   \
+./Source/FreeImage/PluginCUT.cpp   \
+./Source/FreeImage/PluginDDS.cpp   \
+./Source/FreeImage/PluginEXR.cpp   \
+./Source/FreeImage/PluginG3.cpp   \
+./Source/FreeImage/PluginHDR.cpp   \
+./Source/FreeImage/PluginICO.cpp   \
+./Source/FreeImage/PluginIFF.cpp   \
+./Source/FreeImage/PluginJ2K.cpp   \
+././Source/FreeImage/PluginJNG.cpp   \
+./Source/FreeImage/PluginJP2.cpp   \
+./Source/FreeImage/PluginKOALA.cpp   \
+./Source/FreeImage/PluginMNG.cpp   \
+./Source/FreeImage/PluginPCD.cpp   \
+./Source/FreeImage/PluginPCX.cpp   \
+./Source/FreeImage/PluginPFM.cpp   \
+./Source/FreeImage/PluginPICT.cpp   \
+./Source/FreeImage/PluginPNM.cpp   \
+./Source/FreeImage/PluginPSD.cpp   \
+./Source/FreeImage/PluginRAS.cpp   \
+./Source/FreeImage/PluginRAW.cpp   \
+./Source/FreeImage/PluginSGI.cpp   \
+./Source/FreeImage/PluginTARGA.cpp   \
+./Source/FreeImage/PluginTIFF.cpp   \
+./Source/FreeImage/PluginWBMP.cpp   \
+./Source/FreeImage/PluginXBM.cpp   \
+./Source/FreeImage/PluginXPM.cpp   \
 Source/LibTIFF4/./tif_aux.c   \
 Source/LibTIFF4/./tif_close.c   \
 Source/LibTIFF4/./tif_codec.c   \
@@ -295,29 +312,13 @@ Source/LibRawLite/./internal/dcraw_fileio.cpp   \
 Source/LibRawLite/./internal/demosaic_packs.cpp   \
 Source/LibRawLite/./src/libraw_c_api.cpp   \
 Source/LibRawLite/./src/libraw_cxx.cpp   \
-Source/LibRawLite/./src/libraw_datastream.cpp   \
-
-#Source/ZLib/./adler32.c   \
-#Source/ZLib/./compress.c   \
-#Source/ZLib/./crc32.c   \
-#Source/ZLib/./deflate.c   \
-#Source/ZLib/./gzclose.c   \
-#Source/ZLib/./gzlib.c   \
-#Source/ZLib/./gzread.c   \
-#Source/ZLib/./gzwrite.c   \
-#Source/ZLib/./infback.c   \
-#Source/ZLib/./inffast.c   \
-#Source/ZLib/./inflate.c   \
-#Source/ZLib/./inftrees.c   \
-#Source/ZLib/./trees.c   \
-#Source/ZLib/./uncompr.c   \
-#Source/ZLib/./zutil.c   \
-
+Source/LibRawLite/./src/libraw_datastream.cpp
+endif
 
 #
-LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-maybe-uninitialized -Wno-format -Wno-write-strings
+LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-maybe-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
 
-LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-maybe-uninitialized -Wno-format -Wno-write-strings
+LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-maybe-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
 #
 LOCAL_MODULE            := freeimage
 

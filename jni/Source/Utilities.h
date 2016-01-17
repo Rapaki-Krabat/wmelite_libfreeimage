@@ -289,6 +289,9 @@ Fast generic assign (faster than for loop)
 */
 inline void 
 AssignPixel(BYTE* dst, const BYTE* src, unsigned bytesperpixel) {
+#ifdef AVOID_UNALIGNED_ACCESS
+	memcpy(dst, src, bytesperpixel);
+#else
 	switch (bytesperpixel) {
 		case 1:	// FIT_BITMAP (8-bit)
 			*dst = *src;
@@ -335,6 +338,7 @@ AssignPixel(BYTE* dst, const BYTE* src, unsigned bytesperpixel) {
 		default:
 			assert(FALSE);
 	}
+#endif
 }
 
 /**

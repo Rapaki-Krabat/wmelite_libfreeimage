@@ -33,3 +33,5 @@ APP_PLATFORM := android-9
 
 APP_STL := gnustl_shared
 
+FREEIMAGE_LITE_BUILD := true
+

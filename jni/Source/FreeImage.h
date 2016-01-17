@@ -372,6 +372,15 @@ FI_STRUCT (FIICCPROFILE) {
 
 /** I/O image format identifiers.
 */
+#ifdef FREEIMAGE_LITE_BUILD
+FI_ENUM(FREE_IMAGE_FORMAT) {
+	FIF_UNKNOWN = -1,
+	FIF_BMP		= 0,
+	FIF_JPEG	= 2,
+	FIF_PNG		= 13,
+	FIF_GIF     = 25,
+};
+#else
 FI_ENUM(FREE_IMAGE_FORMAT) {
 	FIF_UNKNOWN = -1,
 	FIF_BMP		= 0,
@@ -411,6 +420,7 @@ FI_ENUM(FREE_IMAGE_FORMAT) {
 	FIF_PICT	= 33,
 	FIF_RAW		= 34
 };
+#endif
 
 /** Image type used in FreeImage.
 */
