@@ -315,9 +315,9 @@ Source/LibRawLite/./src/libraw_datastream.cpp   \
 
 
 #
-LOCAL_CFLAGS            += -O2 -Wcast-align
+LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch
 
-LOCAL_CPPFLAGS            += -O2 -Wcast-align
+LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch
 #
 LOCAL_MODULE            := freeimage
 
