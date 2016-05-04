@@ -141,4 +141,7 @@
     <ClCompile Include="..\..\jni\Source\ZLib\uncompr.c" />
     <ClCompile Include="..\..\jni\Source\ZLib\zutil.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\jni\Source\FreeImage.h" />
+  </ItemGroup>
 </Project>
