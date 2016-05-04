@@ -278,6 +278,7 @@ FreeImage_Initialise(BOOL load_local_plugins_only) {
 			// external plugin initialization
 
 #ifdef _WIN32
+#ifndef FREEIMAGE_LITE_BUILD
 			if (!load_local_plugins_only) {
 				int count = 0;
 				char buffer[MAX_PATH + 200];
@@ -337,6 +338,7 @@ FreeImage_Initialise(BOOL load_local_plugins_only) {
 					SetCurrentDirectory(current_dir);
 				}
 			}
+#endif // FREEIMAGE_LITE_BUild
 #endif // _WIN32
 		}
 	}
@@ -516,6 +518,7 @@ FreeImage_RegisterLocalPlugin(FI_InitProc proc_address, const char *format, cons
 #ifdef _WIN32
 FREE_IMAGE_FORMAT DLL_CALLCONV
 FreeImage_RegisterExternalPlugin(const char *path, const char *format, const char *description, const char *extension, const char *regexpr) {
+#ifndef FREEIMAGE_LITE_BUILD
 	if (path != NULL) {
 		HINSTANCE instance = LoadLibrary(path);
 
@@ -530,6 +533,8 @@ FreeImage_RegisterExternalPlugin(const char *path, const char *format, const cha
 			return result;
 		}
 	}
+
+#endif
 
 	return FIF_UNKNOWN;
 }

@@ -38,8 +38,8 @@ DeprecationMgr::DeprecationMgr() {
 DeprecationMgr::~DeprecationMgr() {
 #ifdef _WIN32
 	if (!m_functions.empty()) {
-		OutputDebugString( "*************************************************************************************\n" );
-		OutputDebugString( "This is a warning, because you use one or more deprecated functions.\nContinuing to use these functions might eventually render your program uncompilable.\nThe following functions are deprecated:\n\n" );
+		OutputDebugString((LPCWSTR) "*************************************************************************************\n" );
+		OutputDebugString((LPCWSTR)  "This is a warning, because you use one or more deprecated functions.\nContinuing to use these functions might eventually render your program uncompilable.\nThe following functions are deprecated:\n\n" );
 
 		for (std::map<const char *, DeprecatedFunction>::iterator i = m_functions.begin(); i != m_functions.end(); ++i) {
 			DeprecatedFunction *function = &((*i).second);
@@ -48,10 +48,10 @@ DeprecationMgr::~DeprecationMgr() {
 
 			sprintf(txt, " * %s called from %i different places. Instead use %s.\n", function->old_function_name,  function->called_from.size(), function->new_function_name);
 
-			OutputDebugString(txt);
+			OutputDebugString((LPCWSTR) txt);
 		}
 
-		OutputDebugString( "*************************************************************************************\n" );
+		OutputDebugString((LPCWSTR)  "*************************************************************************************\n" );
 
 		m_functions.clear();
 	}
@@ -72,7 +72,9 @@ void
 DeprecationMgr::AddDeprecatedFunction(const char *old_function_name, const char *new_function_name, const void *frame_ptr) {
 #ifdef _WIN32
 	int *preturn = (int *)frame_ptr + 1; // usual return address @ [ebp+4]
-	int called_from = IsBadReadPtr(preturn, 4) ? 0 : *preturn;
+	
+	// int called_from = IsBadReadPtr(preturn, 4) ? 0 : *preturn;
+	int called_from = *preturn;
 
 	// check if this function was already listed as deprecated
 	// if it wasn't, make a new entry for it

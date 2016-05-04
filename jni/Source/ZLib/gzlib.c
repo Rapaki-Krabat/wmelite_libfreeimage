@@ -236,7 +236,11 @@ local gzFile gz_open(path, fd, mode)
 #ifdef _WIN32
         fd == -2 ? _wopen(path, oflag, 0666) :
 #endif
+#ifdef ZLIB_USE_ISO_FUNCTION_NAMES
+		_open(path, oflag, 0666));
+#else
         open(path, oflag, 0666));
+#endif
     if (state->fd == -1) {
         free(state->path);
         free(state);
