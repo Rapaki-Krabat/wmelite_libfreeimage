@@ -260,7 +260,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -273,7 +273,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -286,7 +286,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -299,7 +299,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -312,7 +312,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -325,7 +325,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

@@ -139,7 +139,7 @@ FI_STRUCT (FIMULTIBITMAP) { void *data; };
 #define SEEK_END  2
 #endif
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || defined(FREEIMAGE_USE_STD_DATATYPE_DEFINES)
 // define portable types for 32-bit / 64-bit OS
 #include <inttypes.h>
 typedef int32_t BOOL;
