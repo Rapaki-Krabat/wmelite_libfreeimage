@@ -248,6 +248,20 @@
 #  endif /* other system, !OS/2 */
 #endif /* !Windows/x86 */
 
+#ifdef PNG_WINRT_NO_EXPORT_SYMBOLS
+#undef PNG_DLL_EXPORT
+#undef PNG_DLL_IMPORT
+#define PNG_DLL_EXPORT
+#define PNG_DLL_IMPORT
+#endif
+
+/* definition to expand macro then apply to pragma message */
+#define VALUE_TO_STRING(x) #x
+#define VALUE(x) VALUE_TO_STRING(x)
+#define VAR_NAME_VALUE(var) #var "="  VALUE(var)
+
+#pragma message(VAR_NAME_VALUE(PNG_DLL_EXPORT))
+
 /* Now do all the defaulting . */
 #ifndef PNGCAPI
 #  define PNGCAPI

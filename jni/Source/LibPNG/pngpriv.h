@@ -373,7 +373,11 @@
 /* Memory model/platform independent fns */
 #ifndef PNG_ABORT
 #  ifdef _WINDOWS_
-#    define PNG_ABORT() ExitProcess(0)
+#    ifdef PNG_ABORT_IGNORE
+#      define PNG_ABORT() do {} while(0);
+#    else
+#      define PNG_ABORT() ExitProcess(0)
+#    endif
 #  else
 #    define PNG_ABORT() abort()
 #  endif
@@ -393,7 +397,11 @@
 #  ifdef _WINDOWS_  /* Favor Windows over C runtime fns */
 #    define CVT_PTR(ptr)         (ptr)
 #    define CVT_PTR_NOCHECK(ptr) (ptr)
-#    define png_strlen  lstrlenA
+#    ifdef PNG_USE_LEGACY_STRLEN
+#      define png_strlen  strlen
+#    else
+#      define png_strlen  lstrlenA
+#    endif
 #    define png_memcmp  memcmp
 #    define png_memcpy  memcpy
 #    define png_memset  memset
