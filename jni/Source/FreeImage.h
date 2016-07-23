@@ -382,6 +382,9 @@ FI_ENUM(FREE_IMAGE_FORMAT) {
 	FIF_BMP		= 0,
 	FIF_JPEG	= 2,
 	FIF_PNG		= 13,
+#ifdef FREEIMAGE_NOT_SO_LITE_BUILD
+	FIF_TARGA   = 17,
+#endif
 	FIF_GIF     = 25,
 };
 #else

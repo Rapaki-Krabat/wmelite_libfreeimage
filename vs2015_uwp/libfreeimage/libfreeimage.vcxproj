@@ -70,6 +70,7 @@
     <ClCompile Include="..\..\jni\Source\FreeImage\PluginGIF.cpp" />
     <ClCompile Include="..\..\jni\Source\FreeImage\PluginJPEG.cpp" />
     <ClCompile Include="..\..\jni\Source\FreeImage\PluginPNG.cpp" />
+    <ClCompile Include="..\..\jni\Source\FreeImage\PluginTARGA.cpp" />
     <ClCompile Include="..\..\jni\Source\FreeImage\tmoColorConvert.cpp" />
     <ClCompile Include="..\..\jni\Source\FreeImage\tmoDrago03.cpp" />
     <ClCompile Include="..\..\jni\Source\FreeImage\tmoFattal02.cpp" />
@@ -263,7 +264,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;FREEIMAGE_NOT_SO_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -276,7 +277,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;FREEIMAGE_NOT_SO_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -289,7 +290,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;FREEIMAGE_NOT_SO_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -302,7 +303,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;FREEIMAGE_NOT_SO_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -315,7 +316,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;FREEIMAGE_NOT_SO_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -328,7 +329,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FREEIMAGE_LITE_BUILD;FREEIMAGE_NOT_SO_LITE_BUILD;_CRT_SECURE_NO_WARNINGS;FREEIMAGE_EXPORTS;NO_GETENV;PNG_ABORT_IGNORE;PNG_WINRT_NO_EXPORT_SYMBOLS;ZLIB_USE_ISO_FUNCTION_NAMES;PNG_USE_LEGACY_STRLEN;FREEIMAGE_ROTATE_NO_DEPRECATE;FREEIMAGE_USE_STD_DATATYPE_DEFINES;FREEIMAGE_DISABLE_CALLING_CONVENTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\jni\Source\ZLib;..\..\jni\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

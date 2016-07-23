@@ -140,6 +140,7 @@
     <ClCompile Include="..\..\jni\Source\ZLib\trees.c" />
     <ClCompile Include="..\..\jni\Source\ZLib\uncompr.c" />
     <ClCompile Include="..\..\jni\Source\ZLib\zutil.c" />
+    <ClCompile Include="..\..\jni\Source\FreeImage\PluginTARGA.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\jni\Source\FreeImage.h" />

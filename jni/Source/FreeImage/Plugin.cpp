@@ -262,6 +262,11 @@ FreeImage_Initialise(BOOL load_local_plugins_only) {
 			s_plugins->AddNode(InitXPM);
 			s_plugins->AddNode(InitDDS);
 #endif
+
+#ifdef FREEIMAGE_NOT_SO_LITE_BUILD
+			s_plugins->AddNode(InitTARGA);
+#endif
+
 	        s_plugins->AddNode(InitGIF);
 #ifndef FREEIMAGE_LITE_BUILD
 	        s_plugins->AddNode(InitHDR);
