@@ -56,6 +56,7 @@ SRCS_FREEIMAGE_LITE = ./Source/FreeImage/BitmapAccess.cpp ./Source/FreeImage/Col
 ./Source/FreeImage/PluginGIF.cpp \
 ./Source/FreeImage/PluginJPEG.cpp \
 ./Source/FreeImage/PluginPNG.cpp \
+./Source/FreeImage/PluginTARGA.cpp \
 ./Source/FreeImage/Conversion.cpp ./Source/FreeImage/Conversion16_555.cpp ./Source/FreeImage/Conversion16_565.cpp ./Source/FreeImage/Conversion24.cpp \
 ./Source/FreeImage/Conversion32.cpp ./Source/FreeImage/Conversion4.cpp ./Source/FreeImage/Conversion8.cpp ./Source/FreeImage/ConversionFloat.cpp ./Source/FreeImage/ConversionRGB16.cpp ./Source/FreeImage/ConversionRGBF.cpp \
 ./Source/FreeImage/ConversionType.cpp ./Source/FreeImage/ConversionUINT16.cpp ./Source/FreeImage/Halftoning.cpp ./Source/FreeImage/tmoColorConvert.cpp ./Source/FreeImage/tmoDrago03.cpp ./Source/FreeImage/tmoFattal02.cpp \

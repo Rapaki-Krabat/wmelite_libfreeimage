@@ -15,9 +15,9 @@ LOCAL_CPPFLAGS      += -ISource/LibTIFF4 -ISource/ZLib -ISource/LibOpenJPEG -ISo
 
 else
 
-LOCAL_CFLAGS        += -DFREEIMAGE_LITE_BUILD -DAVOID_UNALIGNED_ACCESS
+LOCAL_CFLAGS        += -DFREEIMAGE_LITE_BUILD -DFREEIMAGE_NOT_SO_LITE_BUILD -DAVOID_UNALIGNED_ACCESS
 
-LOCAL_CPPFLAGS      += -DFREEIMAGE_LITE_BUILD -DAVOID_UNALIGNED_ACCESS
+LOCAL_CPPFLAGS      += -DFREEIMAGE_LITE_BUILD -DFREEIMAGE_NOT_SO_LITE_BUILD -DAVOID_UNALIGNED_ACCESS
 
 endif
 
@@ -37,6 +37,7 @@ LOCAL_SRC_FILES         :=  \
 ./Source/FreeImage/PluginGIF.cpp   \
 ./Source/FreeImage/PluginJPEG.cpp   \
 ./Source/FreeImage/PluginPNG.cpp   \
+./Source/FreeImage/PluginTARGA.cpp \
 ./Source/FreeImage/Conversion.cpp   \
 ./Source/FreeImage/Conversion16_555.cpp   \
 ./Source/FreeImage/Conversion16_565.cpp   \
