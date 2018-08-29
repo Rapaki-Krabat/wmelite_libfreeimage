@@ -23,6 +23,8 @@ LOCAL_CPPFLAGS      += -DFREEIMAGE_LITE_BUILD -DFREEIMAGE_NOT_SO_LITE_BUILD -DAV
 
 # LOCAL_ARM_MODE := arm
 
+FREEIMAGE_LITE_BUILD := true
+
 LOCAL_SRC_FILES         :=  \
 ./Source/FreeImage/BitmapAccess.cpp   \
 ./Source/FreeImage/ColorLookup.cpp   \
@@ -172,7 +174,6 @@ LOCAL_SRC_FILES +=  \
 ./Source/FreeImage/PluginRAS.cpp   \
 ./Source/FreeImage/PluginRAW.cpp   \
 ./Source/FreeImage/PluginSGI.cpp   \
-./Source/FreeImage/PluginTARGA.cpp   \
 ./Source/FreeImage/PluginTIFF.cpp   \
 ./Source/FreeImage/PluginWBMP.cpp   \
 ./Source/FreeImage/PluginXBM.cpp   \
@@ -317,9 +318,9 @@ Source/LibRawLite/./src/libraw_datastream.cpp
 endif
 
 #
-LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-maybe-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
+LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-const-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
 
-LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-maybe-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
+LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-const-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
 #
 LOCAL_MODULE            := freeimage
 
