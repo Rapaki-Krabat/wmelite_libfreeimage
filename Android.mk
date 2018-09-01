@@ -3,9 +3,13 @@ LOCAL_PATH              :=  $(call my-dir)
 #
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS        +=  -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/Source/ $(LOCAL_PATH)/Source/Metadata $(LOCAL_PATH)/Source/FreeImageToolkit $(LOCAL_PATH)/Source/LibJPEG $(LOCAL_PATH)/Source/LibPNG
 
-LOCAL_CPPFLAGS      += -fexceptions -frtti -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG
+# LOCAL_CFLAGS        +=  -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG
+
+# LOCAL_CPPFLAGS      += -fexceptions -frtti -I. -ISource -ISource/Metadata -ISource/FreeImageToolkit -ISource/LibJPEG -ISource/LibPNG
+
+LOCAL_CPPFLAGS      += -fexceptions -frtti
 
 # ifneq ($(FREEIMAGE_LITE_BUILD),true)
 
