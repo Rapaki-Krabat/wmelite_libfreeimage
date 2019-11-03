@@ -17,28 +17,29 @@ RCFILE = FreeImage.rc
 # Default: SHARED
 #FREEIMAGE_LIBRARY_TYPE = STATIC
 
-# Redefine the compiler (CC defaults to ´cc´ for MinGW's make,
-# however there's only ´gcc´ available with MinGW).
-CC = gcc
+# Redefine the compiler (CC defaults to ï¿½ccï¿½ for MinGW's make,
+# however there's only ï¿½gccï¿½ available with MinGW).
+CC=i586-mingw32msvc-gcc
+CXX = i586-mingw32msvc-g++
 
-# Redefine the linker (we use ´g++´ for linking, since MinGW's
-# command ´ld´ comes with wrong (Linux) standard library search
+# Redefine the linker (we use ï¿½g++ï¿½ for linking, since MinGW's
+# command ï¿½ldï¿½ comes with wrong (Linux) standard library search
 # paths).
-LD = g++
+LD = i586-mingw32msvc-g++
 
-#Define the ´dlltool´ command.
+#Define the ï¿½dlltoolï¿½ command.
 DLLTOOL = dlltool
 
 #Define the resource compiler.
 RC = windres
 
-# Define the ´copy´ command.
+# Define the ï¿½copyï¿½ command.
 CP = cp
 
-# Define the ´mkdir´ command.
+# Define the ï¿½mkdirï¿½ command.
 MD = mkdir
 
-# Define the ´remove´ command.
+# Define the ï¿½removeï¿½ command.
 RM = rm
 
 # Define additional libraries needed.
@@ -62,13 +63,18 @@ WIN32_LDFLAGS = -Wl,--subsystem,windows:5.0,--major-os-version,5
 WIN32_STATIC_FLAGS = -DFREEIMAGE_LIB
 WIN32_SHARED_FLAGS = -DFREEIMAGE_EXPORTS
 
-MODULES = $(SRCS:.c=.o)
+#MODULES = $(SRCS:.c=.o)
+#MODULES := $(MODULES:.cpp=.o)
+
+SRCS_TO_COMPILE=$(SRCS_FREEIMAGE_LITE)
+MODULES =  $(SRCS_TO_COMPILE:.c=.o)
 MODULES := $(MODULES:.cpp=.o)
+
 RESOURCE = $(RCFILE:.rc=.coff)
-CFLAGS ?= -O3 -fexceptions -DNDEBUG $(WIN32_CFLAGS)
-CFLAGS += $(INCLUDE)
-CXXFLAGS ?= -O3 -fexceptions -Wno-ctor-dtor-privacy -DNDEBUG $(WIN32_CXXFLAGS)
-CXXFLAGS += $(INCLUDE)
+CFLAGS ?= -O3 -fexceptions -DNDEBUG -DFREEIMAGE_LITE_BUILD -DFREEIMAGE_NOT_SO_LITE_BUILD $(WIN32_CFLAGS)
+CFLAGS += $(INCLUDE_LITE)
+CXXFLAGS ?= -O3 -fexceptions -Wno-ctor-dtor-privacy -DNDEBUG -DFREEIMAGE_LITE_BUILD -DFREEIMAGE_NOT_SO_LITE_BUILD $(WIN32_CXXFLAGS)
+CXXFLAGS += $(INCLUDE_LITE)
 RCFLAGS ?= -DNDEBUG
 LDFLAGS ?= -s -shared -static -Wl,-soname,$(SOLIBNAME) $(WIN32_LDFLAGS)
 DLLTOOLFLAGS ?= --add-stdcall-underscore
