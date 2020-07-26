@@ -21,6 +21,7 @@ RCFILE = FreeImage.rc
 # however there's only �gcc� available with MinGW).
 CC=i686-w64-mingw32-gcc
 CXX = i686-w64-mingw32-g++
+AR = i686-w64-mingw32-ar
 
 # Redefine the linker (we use �g++� for linking, since MinGW's
 # command �ld� comes with wrong (Linux) standard library search
