@@ -121,10 +121,13 @@ Source/LibPNG/pngwtran.c
 Source/LibPNG/pngwutil.c
 )
 
-target_compile_definitions(wmelite_freeimage PRIVATE -DVER_MAJOR="3" -DVER_MINOR="15.4" -fexceptions -DUNICODE)
+target_compile_definitions(wmelite_freeimage PRIVATE -DVER_MAJOR="3" -DVER_MINOR="15.4" -DUNICODE)
 target_compile_definitions(wmelite_freeimage PUBLIC  -DFREEIMAGE_LITE_BUILD -DFREEIMAGE_NOT_SO_LITE_BUILD)
 
 target_include_directories(wmelite_freeimage PUBLIC Source/)
 target_include_directories(wmelite_freeimage PRIVATE Source/Metadata/ Source/FreeImageToolkit/ Source/LibJPEG/ Source/LibPNG/)
+
+# TODO exceptions are not enabled explicitly, hopefully the overall build will enable them
+# Makefile has option "-fexceptions"
 
 target_link_libraries(wmelite_freeimage zlib)
