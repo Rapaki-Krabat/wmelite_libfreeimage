@@ -1,0 +1,3 @@
+[submodule "Source/ZLib"]
+	path = Source/ZLib
+	url = https://bitbucket.org/hcdaniel/wmelite_zlib.git
