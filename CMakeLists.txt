@@ -1,4 +1,9 @@
 
+# pull in local zlib copy if building standalone
+if (USE_LOCAL_ZLIB)
+	add_subdirectory(Source/ZLib)
+endif()
+
 add_library(wmelite_freeimage 
 Source/FreeImage/BitmapAccess.cpp
 Source/FreeImage/ColorLookup.cpp
