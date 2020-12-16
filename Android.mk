@@ -322,9 +322,9 @@ Source/LibRawLite/./src/libraw_datastream.cpp
 endif
 
 #
-LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-const-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
+LOCAL_CFLAGS            += -O2 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-const-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
 
-LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wcast-align -Wno-unused-parameter -Wno-unused-variable -Wno-unused-const-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
+LOCAL_CPPFLAGS            += -O2 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-const-variable -Wno-sign-compare -Wno-main -Wno-parentheses -Wno-switch -Wno-array-bounds -Wno-narrowing -Wno-uninitialized -Wno-format -Wno-write-strings -Wno-unused-value
 #
 LOCAL_MODULE            := freeimage
 
